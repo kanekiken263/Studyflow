@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* StudyFlow Brand Colors - Light */
+    --primary: 224 76% 33%; /* Deep Blue #1e3a8a */
+    --primary-foreground: 210 40% 98%;
+    
+    --accent: 38 92% 50%; /* Amber #f59e0b */
+    --accent-foreground: 224 76% 15%;
+
+    --background: 210 40% 98%;
+    --foreground: 224 76% 15%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 224 76% 15%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 76% 15%;
+    
+    --secondary: 214 32% 91%;
+    --secondary-foreground: 224 76% 15%;
+    
+    --muted: 214 32% 91%;
+    --muted-foreground: 215 16% 47%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 214 32% 85%;
+    --input: 214 32% 85%;
+    --ring: 224 76% 33%;
+    --radius: 1rem;
+
+    /* Map Specific Tokens */
+    --map-land: 214 32% 85%;
+    --map-border: 214 32% 80%;
+    --map-marker: 224 76% 33%;
+  }
+
+  .dark {
+    /* StudyFlow Brand Colors - Cinematic Dark */
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    
+    --card: 222 47% 15%;
+    --card-foreground: 210 40% 98%;
+    
+    --popover: 222 47% 15%;
+    --popover-foreground: 210 40% 98%;
+    
+    --primary: 224 76% 45%;
+    --primary-foreground: 210 40% 98%;
+    
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+    
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    
+    --accent: 38 92% 50%;
+    --accent-foreground: 222 47% 11%;
+    
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 217 33% 20%;
+    --input: 217 33% 20%;
+    --ring: 224 76% 45%;
+
+    /* Map Specific Tokens */
+    --map-land: 217 33% 25%;
+    --map-border: 217 33% 30%;
+    --map-marker: 38 92% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: clip;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .ease-in-out-cubic {
+    transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  
+  .animate-pulse-subtle {
+    animation: pulse-subtle 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .map-land-fill {
+    fill: hsl(var(--map-land) / 0.3);
+    stroke: hsl(var(--map-border) / 0.4);
+    stroke-width: 0.5;
+  }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
